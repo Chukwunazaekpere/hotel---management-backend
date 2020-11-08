@@ -4,6 +4,8 @@ from . import views
 app_name = 'room'
 
 urlpatterns = [
+    path('', views.HomepageView.as_view(), name='homepage'),
+    
     # This url requires a url-argument tagged 'room-type'
     path('roomslist/<str:room_type>/', views.ListRooms.as_view(), 
                                                     name='roomslist'),

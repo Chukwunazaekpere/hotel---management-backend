@@ -26,8 +26,13 @@ from django.template.loader import render_to_string
 from django.utils.html import strip_tags
 
 from django.conf import settings 
+from django.views.generic import TemplateView
 
 
+class HomepageView(TemplateView):
+    template_name = 'index.html'
+
+    
 class ListRooms(ListAPIView):
     """
     This serializer gives a list of available rooms for booking.
