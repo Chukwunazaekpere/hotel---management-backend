@@ -141,7 +141,7 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'hotelmgt/build/static')
 ]
 
-# STATIC_ROOT = os.pat
+STATIC_ROOT = os.path.join(BASE_DIR, 'static_files')
 
 
 from django.core.exceptions import ImproperlyConfigured
