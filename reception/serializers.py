@@ -17,8 +17,6 @@ class OccupantSerializer(serializers.ModelSerializer):
     """
     Map occupants data to the occupant database'
     """
-    duration         = serializers.IntegerField(default=1)
-
     class Meta:
         model  = Occupant
-        exclude = ['room']
+        fields = "__all__"

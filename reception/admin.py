@@ -14,7 +14,7 @@ class RoomAdmin(admin.ModelAdmin):
 
 @admin.register(Occupant)
 class OccupantAdmin(admin.ModelAdmin):
-    list_display  = ['firstname', 'lastname', 'email', 'check_in_date', 'duration', 'check_out_date']
-    list_filter   = ['check_in_date', 'check_out_date']
+    list_display  = ['firstname', 'lastname', 'email', 'duration']
+    list_filter   = ['duration']
     list_editable = ['duration']
 

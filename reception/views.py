@@ -35,13 +35,8 @@ class ListRooms(ListAPIView):
     queryset         = Room.objects.all()
     serializer_class = RoomSerializer
 
-    def get(self, *args, **kwargs):
-        room_type = kwargs['room_type'].title()
-        print("\n\troom_type: ",room_type)
-        
-        get_rooms_by_room_type = Room.objects.filter(room_type=room_type).values()
-
-        # get_only_free_rooms = Room.objects.filter(room_status='Free').values()
+    def get(self, *args, **kwargs):        
+        get_only_free_rooms = Room.objects.filter(room_status='Free').values()
         
         return Response( get_rooms_by_room_type )
 
@@ -52,6 +47,18 @@ class CreateOccupant(CreateAPIView):
     """
     queryset         = Occupant.objects.all()
     serializer_class = OccupantSerializer
+
+    def post(self, *args, **kwargs):
+        serializer_data = OccupantSerializer(data=self.request.data)
+        if serializer_data.is_valid():
+            print("\n\t Data valid...")
+            paid = False
+            kwargs.update({ 'paid': paid })
+            serializer_data.save()
+            return Response(data='Processed!', status=status.HTTP_201_CREATED)
+
+        return Response(serializer_data.errors, status=status.HTTP_403_FORBIDDEN)
+
     
 
 class CreatePayment(CreateAPIView):

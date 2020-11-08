@@ -28,6 +28,9 @@ class Room(models.Model):
         # return room details
         return reverse(('room:room_details'), args=[self.slug])
 
+    def __str__(self):
+        return f"This is room number: {self.room_number} \n room status: {self.room_status}."
+
     def save(self, *args, **kwargs):
 
         if not self.slug:
@@ -44,34 +47,37 @@ class Occupant(models.Model):
     """
     # Make a one to one field to map occupants to room; since rooms
     # will be constant but occupants aren't.
-    room             = models.OneToOneField(Room, related_name='room',
-                                             on_delete=models.DO_NOTHING)
+    
     firstname        = models.CharField(max_length=30)
     lastname         = models.CharField(max_length=30)
 
-    username         = models.CharField(max_length=100, blank=True)
-    email            = models.EmailField()
+    email            = models.EmailField(unique=True)
     phone            = models.CharField(max_length=11, error_messages={'unique':
                         "This phone field must contain only numbers of eleven characters."})
     
-    payment_status   = models.BooleanField(default=False)
-    check_in_date    = models.DateTimeField(auto_now_add=True)
+    checked_in       = models.BooleanField(default=False)
     duration         = models.PositiveIntegerField(editable=True, default=1)
+
+    def __str__(self):
+        return f"{self.firstname} {self.lastname} {self.duration}."
+
+
+
+class PaymentDetails(models.Model):
+    """
+    Model particulars for payment details by an occupant for a room.
+    """
+    room             = models.OneToOneField(Room, related_name='room',
+                                             on_delete=models.DO_NOTHING)
+    Occupant         = models.OneToOneField(Occupant, related_name='occupant',
+                                             on_delete=models.DO_NOTHING)
+
+    payment_status   = models.BooleanField(default=False)
+    payment_date     = models.DateTimeField(auto_now_add=True)
+
+    check_in_date    = models.DateTimeField(auto_now_add=True)
     check_out_date   = models.DateTimeField(editable=True, auto_now=True)
-
-    def save(self, *args, **kwargs):
-        paid = kwargs['paid']
-        if paid:
-            self.payment_status = True
-            new_room_reservation = Room()
-            new_room_reservation.save('Booked')
-            # new_room_reservation.save()
-            print("\n\t args: ", args)
-            print("\n\t kwargs: ", kwargs)
-        super().save(*args, **kwargs)
-
-
-        
+    
 
 
 
