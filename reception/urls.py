@@ -4,10 +4,20 @@ from . import views
 app_name = 'room'
 
 urlpatterns = [
-    path('', views.HomepageView.as_view(), name='homepage'),
+    # ===================== Frontend Routes =========================================
+    # Direct all frontend routes to the "HomepageView" at the backend
     
+    path('', views.HomepageView.as_view(), name='homepage'),
+
+    path('occupant-details/', views.HomepageView.as_view(), name='homepage'),
+
+    path('roomlist/', views.HomepageView.as_view(), name='homepage'),
+
+    # ===============================================================================
+    
+    #========================= API Routes ===========================================
     # This url requires a url-argument tagged 'room-type'
-    path('roomslist/<str:room_type>/', views.ListRooms.as_view(), 
+    path('roomslist/', views.RoomsList.as_view(), 
                                                     name='roomslist'),
 
     path('create-occupant/', views.CreateOccupant.as_view(), 

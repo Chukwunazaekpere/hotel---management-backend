@@ -177,7 +177,7 @@ SECRET_KEY = get_secret_data("SECRET_KEY")
 SITE_ID = 1
 
 CORS_ORIGIN_WHITELIST = [
-    'http://localhost:3000',
+    'http://localhost:8000',
 ]
 
 AUTH_USER_MODEL = 'users.Users'

@@ -32,18 +32,19 @@ from django.views.generic import TemplateView
 class HomepageView(TemplateView):
     template_name = 'index.html'
 
-    
-class ListRooms(ListAPIView):
+
+class RoomsList(ListAPIView):
     """
     This serializer gives a list of available rooms for booking.
     """
     queryset         = Room.objects.all()
     serializer_class = RoomSerializer
 
-    def get(self, *args, **kwargs):        
+    def get(self, *args, **kwargs):     
+        # Querry the database for only free rooms.   
         get_only_free_rooms = Room.objects.filter(room_status='Free').values()
         
-        return Response( get_rooms_by_room_type )
+        return Response( get_only_free_rooms )
 
 
 class CreateOccupant(CreateAPIView):
