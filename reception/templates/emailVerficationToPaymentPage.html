@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email verification for payment</title>
+</head>
+
+<body>
+    <h2>Verify Your Email:</h2>
+    <h5>Dear {{firstname}} {{lastname}}, <br> in order to make your payments
+        for reservation, <br> please click on the button to verify your email
+        and proceed for payment.
+        <button type="submit">
+            <a href="{% url 'http://localhost:3000/payment-portal' %}"></a>
+            Verif email
+        </button>
+    </h5>
+</body>
+
+</html>
