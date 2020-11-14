@@ -52,7 +52,7 @@ class Occupant(models.Model):
     lastname         = models.CharField(max_length=30)
 
     email            = models.EmailField(unique=True)
-    phone            = models.CharField(max_length=11, error_messages={'unique':
+    phone            = models.CharField(max_length=11, unique=True, error_messages={'unique':
                         "This phone field must contain only numbers of eleven characters."})
     
     checked_in       = models.BooleanField(default=False)
