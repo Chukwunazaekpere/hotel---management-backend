@@ -48,8 +48,8 @@ class Users(AbstractBaseUser):
     lastname         = models.CharField(max_length=30)
     username         = models.CharField(max_length=50, blank=True)
     email            = models.EmailField(unique=True)
-    password         = models.CharField(max_length=15)
-    confirm_password = models.CharField(max_length=15)
+    password         = models.CharField(max_length=20)
+    confirm_password = models.CharField(max_length=20)
     date_registered  = models.DateTimeField(auto_now_add=True)
     last_login       = models.DateTimeField(auto_now=True)
 
@@ -66,7 +66,7 @@ class Users(AbstractBaseUser):
         verbose_name_plural = 'Users'
 
     def save(self, *args, **kwargs):
-        if self.username:
+        if not self.username:
             self.username = '@'.join([self.email, self.firstname])
         super().save(*args, **kwargs)
     
