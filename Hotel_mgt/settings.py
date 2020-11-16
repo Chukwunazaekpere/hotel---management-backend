@@ -146,7 +146,7 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static_files')
 
 from django.core.exceptions import ImproperlyConfigured
 
-with open(os.path.join(BASE_DIR, 'secret_data.json')) as secret_info:
+with open(os.path.join(os.getcwd(), 'secret_data.json')) as secret_info:
     secrets = json.load(secret_info)
 
 def get_secret_data(settings, secrets=secrets):
@@ -158,6 +158,7 @@ def get_secret_data(settings, secrets=secrets):
     except KeyError:
         raise ImproperlyConfigured("Set the {} setting".format(settings))
 
+print("\n\tCheck: ", os.getcwd())
 
 EMAIL_BACKEND       = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST_USER     = get_secret_data("EMAIL_HOST_USER")
