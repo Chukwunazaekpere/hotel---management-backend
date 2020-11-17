@@ -6,8 +6,8 @@ app_name = 'room'
 urlpatterns = [
     # ===================== Frontend Routes =========================================
     # Direct all frontend routes to the "HomepageView" at the backend
-
     path('', views.HomepageView.as_view(), name='homepage'),
+
 
     path('occupant-details/', views.HomepageView.as_view(), name='homepage'),
 
@@ -32,6 +32,11 @@ urlpatterns = [
 
     path('room-details/<slug:room_slug>/', views.RoomDetailsView.as_view(), 
                                                     name='room_details'),
+
+# ===================================Live url====================================
+    path('hotel-celetsial.herokuapp.com/', views.HomepageView.as_view(), 
+                                                    name='homepage'),
+
 
 ]
 
