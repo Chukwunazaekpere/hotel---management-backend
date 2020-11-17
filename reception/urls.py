@@ -34,7 +34,7 @@ urlpatterns = [
                                                     name='room_details'),
 
 # ===================================Live url====================================
-    path('hotel-celetsial.herokuapp.com/', views.HomepageView.as_view(), 
+    path('hotel-celetsial.herokuapp.com', views.HomepageView.as_view(), 
                                                     name='homepage'),
 
 

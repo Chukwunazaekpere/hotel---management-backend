@@ -180,6 +180,7 @@ SITE_ID = 1
 
 CORS_ORIGIN_WHITELIST = [
     'http://localhost:8000',
+    'https://hotel-celetsial.herokuapp.com'
 ]
 
 AUTH_USER_MODEL = 'users.Users'
