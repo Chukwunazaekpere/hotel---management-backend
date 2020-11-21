@@ -1,27 +1,27 @@
 {
   "files": {
-    "main.css": "/static/css/main.e241170e.chunk.css",
-    "main.js": "/static/js/main.54dec883.chunk.js",
-    "main.js.map": "/static/js/main.54dec883.chunk.js.map",
-    "runtime-main.js": "/static/js/runtime-main.2a21443b.js",
-    "runtime-main.js.map": "/static/js/runtime-main.2a21443b.js.map",
-    "static/css/2.994f7b2c.chunk.css": "/static/css/2.994f7b2c.chunk.css",
-    "static/js/2.c327f95f.chunk.js": "/static/js/2.c327f95f.chunk.js",
-    "static/js/2.c327f95f.chunk.js.map": "/static/js/2.c327f95f.chunk.js.map",
-    "index.html": "/index.html",
-    "precache-manifest.0f06e3d15b91e6c26f775465641378f4.js": "/precache-manifest.0f06e3d15b91e6c26f775465641378f4.js",
-    "service-worker.js": "/service-worker.js",
-    "static/css/2.994f7b2c.chunk.css.map": "/static/css/2.994f7b2c.chunk.css.map",
-    "static/css/main.e241170e.chunk.css.map": "/static/css/main.e241170e.chunk.css.map",
-    "static/js/2.c327f95f.chunk.js.LICENSE.txt": "/static/js/2.c327f95f.chunk.js.LICENSE.txt",
-    "static/media/homepageStyles.css": "/static/media/hotel 2.b921383f.jpg",
-    "static/media/roomReservationStyles.css": "/static/media/hotel 3.17b62f18.jpg"
+    "main.css": "/celestial/static/css/main.fbc58c22.chunk.css",
+    "main.js": "/celestial/static/js/main.55cad0a5.chunk.js",
+    "main.js.map": "/celestial/static/js/main.55cad0a5.chunk.js.map",
+    "runtime-main.js": "/celestial/static/js/runtime-main.e58cdf64.js",
+    "runtime-main.js.map": "/celestial/static/js/runtime-main.e58cdf64.js.map",
+    "static/css/2.994f7b2c.chunk.css": "/celestial/static/css/2.994f7b2c.chunk.css",
+    "static/js/2.c327f95f.chunk.js": "/celestial/static/js/2.c327f95f.chunk.js",
+    "static/js/2.c327f95f.chunk.js.map": "/celestial/static/js/2.c327f95f.chunk.js.map",
+    "index.html": "/celestial/index.html",
+    "precache-manifest.4f00b48ea7345bfad7c18c05bae00e09.js": "/celestial/precache-manifest.4f00b48ea7345bfad7c18c05bae00e09.js",
+    "service-worker.js": "/celestial/service-worker.js",
+    "static/css/2.994f7b2c.chunk.css.map": "/celestial/static/css/2.994f7b2c.chunk.css.map",
+    "static/css/main.fbc58c22.chunk.css.map": "/celestial/static/css/main.fbc58c22.chunk.css.map",
+    "static/js/2.c327f95f.chunk.js.LICENSE.txt": "/celestial/static/js/2.c327f95f.chunk.js.LICENSE.txt",
+    "static/media/homepageStyles.css": "/celestial/static/media/hotel 2.b921383f.jpg",
+    "static/media/roomReservationStyles.css": "/celestial/static/media/hotel 3.17b62f18.jpg"
   },
   "entrypoints": [
-    "static/js/runtime-main.2a21443b.js",
+    "static/js/runtime-main.e58cdf64.js",
     "static/css/2.994f7b2c.chunk.css",
     "static/js/2.c327f95f.chunk.js",
-    "static/css/main.e241170e.chunk.css",
-    "static/js/main.54dec883.chunk.js"
+    "static/css/main.fbc58c22.chunk.css",
+    "static/js/main.55cad0a5.chunk.js"
   ]
 }

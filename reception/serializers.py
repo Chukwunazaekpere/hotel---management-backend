@@ -1,6 +1,6 @@
 from rest_framework import serializers
 from .models import (
-    Room, Occupant
+    Room, Occupant, ContactUs
 )
 
 
@@ -19,4 +19,10 @@ class OccupantSerializer(serializers.ModelSerializer):
     """
     class Meta:
         model  = Occupant
+        fields = "__all__"
+
+
+class ContactSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = ContactUs
         fields = "__all__"

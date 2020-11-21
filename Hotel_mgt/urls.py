@@ -17,7 +17,11 @@ from django.contrib import admin
 from django.urls import path, include
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    path('celestial/admin/', admin.site.urls),
 
-    path('celestial/', include('reception.urls')),
-]
+    path('celestial/reception/', include('reception.urls')),
+
+    path('celestial/users/', include('users.urls')),
+
+    path('account/', include('allauth.urls')),
+    ]

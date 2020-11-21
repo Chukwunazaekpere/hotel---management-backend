@@ -159,7 +159,6 @@ def get_secret_data(settings, secrets=secrets):
     except KeyError:
         raise ImproperlyConfigured("Set the {} setting".format(settings))
 
-print("\n\tCheck: ", os.getcwd())
 
 EMAIL_BACKEND       = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST_USER     = get_secret_data("EMAIL_HOST_USER")
@@ -180,7 +179,6 @@ SITE_ID = 1
 
 CORS_ORIGIN_WHITELIST = [
     'http://localhost:8000',
-    'https://hotel-celetsial.herokuapp.com'
 ]
 
 AUTH_USER_MODEL = 'users.Users'
@@ -189,6 +187,11 @@ REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': (
         'rest_framework.authentication.TokenAuthentication',
     )
+}
+
+
+REST_AUTH_REGISTER_SERIALIZERS = {
+    "REGISTER_SERIALIZER": 'users.serializers.RegisterSerializer'
 }
 
 import django_heroku

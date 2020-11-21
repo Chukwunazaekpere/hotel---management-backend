@@ -1,4 +1,4 @@
-from django.urls import path
+from django.urls import path, include
 from . import views
 
 app_name = 'room'
@@ -17,18 +17,7 @@ urlpatterns = [
     path('room-reservation/payment/', views.HomepageView.as_view(), name='homepage'),
 
     # ===============================================================================
-    
-    #========================= API Routes ===========================================
-    path('roomslist/', views.RoomsList.as_view(), 
-                                                    name='roomslist'),
-
-    path('create-occupant/', views.CreateOccupant.as_view(), 
-                                                    name='create_occupant'),
-
-    path('room-details/<slug:room_slug>/', views.RoomDetailsView.as_view(), 
-                                                    name='room_details'),
-
-# ===================================Live url====================================
+    # ===================================Live url====================================
     path('hotel-celetsial.herokuapp.com', views.HomepageView.as_view(), 
                                                     name='homepage'),
 

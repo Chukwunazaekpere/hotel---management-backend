@@ -62,7 +62,6 @@ class Users(AbstractBaseUser):
     objects         = UserManager()
 
     class Meta:
-        unique_together = ['password', 'confirm_password']
         verbose_name_plural = 'Users'
 
     def save(self, *args, **kwargs):
